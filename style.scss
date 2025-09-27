@@ -144,6 +144,8 @@ body {
         width: 100%;
         border-radius: 16px;
         box-shadow: $shadow;
+        height: auto;
+        display: block;
       }
     }
 
@@ -158,27 +160,60 @@ body {
       display: flex;
       flex-wrap: wrap;
       gap: 2em;
-      > div {
-        flex: 1 1 220px;
+      > div { flex: 1 1 220px; }
+    }
+  }
+
+  &.highlights {
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5em;
+    }
+    .h-card {
+      background: $accent;
+      border-radius: 18px;
+      box-shadow: $shadow;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      align-items: center;
+      transition: transform .18s ease, box-shadow .18s ease;
+      &:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(184,64,45,0.14); }
+      img {
+        width: 120px; height: 120px; object-fit: cover;
       }
+      h3 { margin: .4em 0 .3em; color: $main; font-size: 1.12rem; }
+      p { margin: 0; color: darken($main, 20%); }
+      > div { padding: .8em .9em; }
+    }
+  }
+
+  &.gallery {
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    figure {
+      margin: 0;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: $shadow;
+      img {
+        width: 100%; height: 200px; object-fit: cover; display: block;
+        transition: transform .3s ease;
+      }
+      figcaption {
+        padding: .6em .8em; font-size: .95rem; color: $text;
+      }
+      &:hover img { transform: scale(1.03); }
     }
   }
 }
 
-/* ---------- HELPERS ---------- */
-.widget-hinweis {
-  text-align: center;
-  margin-bottom: 1.8em;
-  p {
-    margin-bottom: 1em;
-    font-size: 1.1em;
-  }
-  .cta-btn.small {
-    padding: 10px 28px;
-    font-size: 1em;
-  }
-}
-
+/* ---------- LINKS / LISTS / FOOTER ---------- */
 ul {
   padding-left: 1em;
   li { margin-bottom: 0.7em; }
@@ -188,7 +223,6 @@ ul {
     &:hover { color: $main-dark; }
   }
 }
-
 footer {
   background: $main;
   color: #fff;
@@ -198,6 +232,7 @@ footer {
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   font-size: 1.06rem;
+  a { color: #fff; text-decoration: underline; }
 }
 
 /* ---------- MODAL (GLORIAFOOD) ---------- */
@@ -270,15 +305,8 @@ footer {
   display: flex;
   animation: fadeIn 0.21s;
 }
-
-@keyframes modalIn {
-  0% { transform: scale(0.93); opacity: 0.3; }
-  100% { transform: scale(1); opacity: 1; }
-}
-@keyframes fadeIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
+@keyframes modalIn { 0% { transform: scale(0.93); opacity: 0.3;} 100% { transform: scale(1); opacity: 1;} }
+@keyframes fadeIn { 0% { opacity: 0; } 100% { opacity: 1;} }
 
 /* ---------- BURGER ANIMATION & OVERLAY ---------- */
 .nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translateY(7px); }
@@ -297,10 +325,7 @@ footer {
   opacity: 0;
   pointer-events: none; /* nur klickbar, wenn .show */
 }
-.nav-overlay.show {
-  opacity: 1;
-  pointer-events: auto;
-}
+.nav-overlay.show { opacity: 1; pointer-events: auto; }
 
 /* ---------- RESPONSIVE NAV (MOBILE) ---------- */
 @media (max-width: 800px) {
@@ -359,23 +384,19 @@ footer {
     .about-text h2 { text-align: center; }
   }
 }
-
 @media (max-width: 700px) {
   .hero-content {
     margin-top: 45px;
     h1 { font-size: 2rem; }
     .cta-btn { font-size: 1em; padding: 12px 26px; }
   }
-  .section, .about, .contact {
-    padding: 1.3em 0.5em 0 0.5em;
-  }
+  .section, .about, .contact { padding: 1.3em 0.5em 0 0.5em; }
   .modal-content {
     max-width: 97vw;
     padding: 0.7em 0.2em 1em 0.2em;
     h2 { font-size: 1.2em; }
   }
 }
-
 @media (max-width: 430px) {
   .navbar .nav-brand { font-size: 1.1rem; }
   .hero-content h1 { font-size: 1.2rem; }

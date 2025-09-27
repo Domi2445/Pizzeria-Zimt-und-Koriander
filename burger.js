@@ -1,10 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   const burger = document.getElementById("burger");
   const menu = document.getElementById("nav-menu");
-
   if (!burger || !menu) return;
 
-  // Overlay erstellen (einmalig)
+  // Overlay einmalig anfügen
   let overlay = document.querySelector(".nav-overlay");
   if (!overlay) {
     overlay = document.createElement("div");
@@ -16,12 +15,14 @@ document.addEventListener("DOMContentLoaded", function () {
     menu.classList.add("active");
     burger.classList.add("open");
     overlay.classList.add("show");
+    burger.setAttribute("aria-expanded", "true");
     document.body.style.overflow = "hidden";
   }
   function closeMenu() {
     menu.classList.remove("active");
     burger.classList.remove("open");
     overlay.classList.remove("show");
+    burger.setAttribute("aria-expanded", "false");
     document.body.style.overflow = "";
   }
   function toggleMenu(e) {
@@ -31,27 +32,22 @@ document.addEventListener("DOMContentLoaded", function () {
     else openMenu();
   }
 
-  // Toggle per Klick/Touch
   ["click", "touchstart"].forEach(evt =>
     burger.addEventListener(evt, toggleMenu, { passive: false })
   );
 
-  // Links im Menü schließen das Menü
-  menu.querySelectorAll("a").forEach(a => {
-    a.addEventListener("click", () => closeMenu());
-  });
+  // Links schließen Menü
+  menu.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
 
-  // Klick auf Overlay schließt
+  // Overlay klick schließt
   ["click", "touchstart"].forEach(evt =>
     overlay.addEventListener(evt, closeMenu, { passive: true })
   );
 
-  // Klick außerhalb von Menü & Burger schließt
+  // Klick außerhalb schließt
   document.addEventListener("click", function (e) {
     if (!menu.classList.contains("active")) return;
-    const clickedOutside =
-      !menu.contains(e.target) && !burger.contains(e.target);
-    if (clickedOutside) closeMenu();
+    if (!menu.contains(e.target) && !burger.contains(e.target)) closeMenu();
   });
 
   // ESC schließt
@@ -59,10 +55,8 @@ document.addEventListener("DOMContentLoaded", function () {
     if (e.key === "Escape" && menu.classList.contains("active")) closeMenu();
   });
 
-  // Bei Resize auf Desktop Zustand zurücksetzen
+  // Resize-Guard
   window.addEventListener("resize", function () {
-    if (window.innerWidth > 800) {
-      closeMenu();
-    }
+    if (window.innerWidth > 800) closeMenu();
   });
 });
