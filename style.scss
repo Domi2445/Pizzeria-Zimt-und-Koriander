@@ -1,0 +1,382 @@
+$main: #b8402d;
+$main-dark: #8e2a1f;
+$accent: #fff3e3;
+$bg: #faf6f2;
+$text: #252525;
+$shadow: 0 4px 18px rgba(0,0,0,0.09);
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  background: $bg;
+  color: $text;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* ---------- HERO & NAV ---------- */
+.hero {
+  background:
+    linear-gradient(rgba(184,64,45,0.3), rgba(30,20,10,0.55)),
+    url('https://images.unsplash.com/photo-1519864600265-abb23847ef2c?auto=format&fit=crop&w=1500&q=80') center/cover no-repeat;
+  color: #fff;
+  min-height: 440px;
+  position: relative;
+
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2em 2em 0.2em 2em;
+    background: transparent;
+    position: relative;
+
+    .nav-brand {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.19);
+    }
+
+    .nav-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      position: relative;
+      z-index: 1102; /* über Menü & Overlay */
+      span {
+        display: block;
+        height: 3px;
+        width: 28px;
+        background: #fff;
+        margin: 5px 0;
+        border-radius: 2px;
+        transition: all 0.3s;
+      }
+    }
+
+    .nav-menu {
+      display: flex;
+      gap: 2em;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      li a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: 500;
+        padding: 8px 0 5px 0;
+        border-bottom: 2px solid transparent;
+        transition: border 0.2s;
+        font-size: 1.08em;
+        &:hover, &:focus {
+          border-bottom: 2.5px solid $accent;
+        }
+      }
+    }
+  }
+
+  .hero-content {
+    text-align: center;
+    margin-top: 92px;
+    h1 {
+      font-size: 2.4rem;
+      font-weight: 700;
+      margin-bottom: 0.5em;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.13);
+      letter-spacing: 1.5px;
+    }
+    p {
+      font-size: 1.25rem;
+      margin-bottom: 1.2em;
+      text-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+    .cta-btn {
+      background: $main;
+      color: #fff;
+      border: none;
+      border-radius: 26px;
+      font-size: 1.18rem;
+      font-weight: bold;
+      padding: 16px 38px;
+      text-decoration: none;
+      box-shadow: 0 2px 12px rgba(184,64,45,0.08);
+      transition: background 0.2s, box-shadow 0.2s;
+      cursor: pointer;
+      &:hover, &:focus {
+        background: $main-dark;
+        box-shadow: 0 6px 18px rgba(184,64,45,0.16);
+      }
+    }
+  }
+}
+
+/* ---------- SECTIONS ---------- */
+.section {
+  max-width: 1050px;
+  margin: 0 auto 2.5em auto;
+  padding: 2.7em 1.5em 1.5em 1.5em;
+  background: #fff;
+  border-radius: 24px;
+  box-shadow: $shadow;
+
+  h2 {
+    color: $main;
+    margin-top: 0;
+    font-size: 2.1rem;
+    font-weight: 700;
+    margin-bottom: 1.6em;
+    letter-spacing: 1px;
+    text-align: center;
+  }
+
+  &.about {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    .about-img {
+      flex: 1 1 190px;
+      padding: 0 1.2em 1.2em 0;
+      img {
+        width: 100%;
+        border-radius: 16px;
+        box-shadow: $shadow;
+      }
+    }
+
+    .about-text {
+      flex: 2 1 320px;
+      h2 { text-align: left; }
+    }
+  }
+
+  &.contact {
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2em;
+      > div {
+        flex: 1 1 220px;
+      }
+    }
+  }
+}
+
+/* ---------- HELPERS ---------- */
+.widget-hinweis {
+  text-align: center;
+  margin-bottom: 1.8em;
+  p {
+    margin-bottom: 1em;
+    font-size: 1.1em;
+  }
+  .cta-btn.small {
+    padding: 10px 28px;
+    font-size: 1em;
+  }
+}
+
+ul {
+  padding-left: 1em;
+  li { margin-bottom: 0.7em; }
+  a {
+    color: $main;
+    text-decoration: underline;
+    &:hover { color: $main-dark; }
+  }
+}
+
+footer {
+  background: $main;
+  color: #fff;
+  text-align: center;
+  padding: 1.6em 0 1.1em 0;
+  margin-top: 3em;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  font-size: 1.06rem;
+}
+
+/* ---------- MODAL (GLORIAFOOD) ---------- */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  align-items: center; justify-content: center;
+
+  .modal-content {
+    position: relative;
+    background: #fff;
+    border-radius: 18px;
+    max-width: 900px;
+    width: 98vw;
+    max-height: 90vh;
+    margin: 2vw;
+    box-shadow: 0 8px 32px rgba(184,64,45,0.17);
+    padding: 2em 1.2em 1.2em 1.2em;
+    text-align: center;
+    animation: modalIn 0.2s;
+    overflow: auto;
+
+    h2 {
+      color: $main;
+      margin-top: 0;
+      margin-bottom: 1.3em;
+      font-size: 1.6em;
+      font-weight: 700;
+    }
+
+    .gloriafood-widget {
+      width: 100%;
+      min-height: 600px;
+      iframe {
+        border: none;
+        border-radius: 10px;
+        width: 100%;
+        min-height: 600px;
+        max-height: 72vh;
+        background: #faf6f2;
+      }
+    }
+  }
+
+  .modal-close {
+    position: absolute;
+    top: 1.1em;
+    right: 1.1em;
+    background: none;
+    border: none;
+    font-size: 2em;
+    color: $main;
+    cursor: pointer;
+    transition: color 0.2s;
+    &:hover { color: $main-dark; }
+  }
+
+  .modal-backdrop {
+    position: fixed;
+    left: 0; top: 0;
+    width: 100vw; height: 100vh;
+    background: rgba(30, 20, 10, 0.32);
+    z-index: -1;
+    border-radius: 0;
+  }
+}
+.modal.active {
+  display: flex;
+  animation: fadeIn 0.21s;
+}
+
+@keyframes modalIn {
+  0% { transform: scale(0.93); opacity: 0.3; }
+  100% { transform: scale(1); opacity: 1; }
+}
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+/* ---------- BURGER ANIMATION & OVERLAY ---------- */
+.nav-toggle.open span:nth-child(1) { transform: rotate(45deg) translateY(7px); }
+.nav-toggle.open span:nth-child(2) { opacity: 0; }
+.nav-toggle.open span:nth-child(3) { transform: rotate(-45deg) translateY(-7px); }
+.nav-toggle span { transition: all 0.3s; }
+
+/* Overlay (global, wird per JS ein/ausgeschaltet) */
+.nav-overlay {
+  display: block; /* immer im DOM */
+  position: fixed;
+  z-index: 1100;
+  left: 0; top: 0; width: 100vw; height: 100vh;
+  background: rgba(0,0,0,0.23);
+  transition: opacity 0.2s;
+  opacity: 0;
+  pointer-events: none; /* nur klickbar, wenn .show */
+}
+.nav-overlay.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- RESPONSIVE NAV (MOBILE) ---------- */
+@media (max-width: 800px) {
+  .navbar {
+    position: relative;
+    z-index: 1101; /* über Seiteninhalt, unter Burger (1102) */
+
+    .nav-toggle { display: flex !important; }
+
+    /* Sicht-/Unsichtbar via visibility/opacity, nicht display */
+    .nav-menu {
+      position: absolute;
+      top: 58px;
+      right: 15px;
+      background: $main;
+      border-radius: 12px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.14);
+      flex-direction: column;
+      display: flex;
+      visibility: hidden;
+      opacity: 0;
+      pointer-events: none;
+      z-index: 1001;
+      min-width: 180px;
+      padding: 1em 0.7em;
+      gap: 1em;
+      transform: translateY(-4px);
+      transition: opacity 0.2s, transform 0.2s, visibility 0s linear 0.2s;
+
+      li { text-align: right; }
+      a {
+        color: #fff;
+        font-size: 1.13em;
+        padding: 0.3em 0.7em;
+        border-radius: 7px;
+        transition: background 0.18s;
+        &:hover { background: rgba(255,255,255,0.16); }
+      }
+    }
+
+    .nav-menu.active {
+      visibility: visible;
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+  }
+}
+
+/* ---------- MORE RESPONSIVE TWEAKS ---------- */
+@media (max-width: 1000px) {
+  .section.about {
+    flex-direction: column;
+    .about-img { padding: 0 0 1.2em 0; }
+    .about-text h2 { text-align: center; }
+  }
+}
+
+@media (max-width: 700px) {
+  .hero-content {
+    margin-top: 45px;
+    h1 { font-size: 2rem; }
+    .cta-btn { font-size: 1em; padding: 12px 26px; }
+  }
+  .section, .about, .contact {
+    padding: 1.3em 0.5em 0 0.5em;
+  }
+  .modal-content {
+    max-width: 97vw;
+    padding: 0.7em 0.2em 1em 0.2em;
+    h2 { font-size: 1.2em; }
+  }
+}
+
+@media (max-width: 430px) {
+  .navbar .nav-brand { font-size: 1.1rem; }
+  .hero-content h1 { font-size: 1.2rem; }
+}

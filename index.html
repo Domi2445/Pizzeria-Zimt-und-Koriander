@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzeria Zimt & Koriander</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="nav-brand">Zimt & Koriander</div>
+      <div class="nav-toggle" id="burger">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="#speisekarte">Speisekarte</a></li>
+        <li><a href="#ueber-uns">Über uns</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>Frisch. Regional. Unvergesslich.</h1>
+      <p>Genieße authentische italienische Küche – mitten in deiner Stadt</p>
+      <a href="#" id="bestell-btn" class="cta-btn">Online bestellen</a>
+    </div>
+  </header>
+  <main>
+    <section id="speisekarte" class="section">
+      <h2>Unsere Speisekarte</h2>
+      <div class="widget-hinweis">
+        <p>Hier kannst du direkt online bestellen oder unsere Speisekarte einsehen.</p>
+        <button id="bestell-btn-2" class="cta-btn small">Jetzt online bestellen</button>
+      </div>
+    </section>
+    <section id="ueber-uns" class="section about">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1464306076886-debca5e8a6b0?auto=format&fit=crop&w=400&q=80" alt="Restaurant Team">
+      </div>
+      <div class="about-text">
+        <h2>Über uns</h2>
+        <p>Wir sind ein familiengeführtes Restaurant mit Leidenschaft für italienisches Essen und herzliche Gastfreundschaft.</p>
+      </div>
+    </section>
+    <section id="kontakt" class="section contact">
+      <h2>Kontakt & Öffnungszeiten</h2>
+      <div class="contact-grid">
+        <div>
+          <ul>
+            <li><strong>Adresse:</strong> Musterstraße 1, 12345 Musterstadt</li>
+            <li><strong>Telefon:</strong> <a href="tel:093349799490">09334 9799490</a></li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/49093349799490" target="_blank">Jetzt schreiben</a></li>
+            <li><strong>E-Mail:</strong> <a href="mailto:info@pizzeriazimtundkoriander.de">info@pizzeriazimtundkoriander.de</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Öffnungszeiten:</strong>
+          <ul>
+            <li>Montag – Samstag: 16:00 – 22:00 Uhr</li>
+            <li>Sonntag: 14:30 – 22:00 Uhr</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Pizzeria Zimt & Koriander</p>
+  </footer>
+
+  <!-- Bestell-Modal -->
+  <div id="bestell-modal" class="modal">
+    <div class="modal-content">
+      <button class="modal-close" id="close-modal" title="Schließen">&times;</button>
+      <h2>Online bestellen</h2>
+      <div class="gloriafood-widget">
+        <iframe src="https://www.foodbooking.com/api/fb/1d_mm_m"
+                width="100%"
+                height="700"
+                frameborder="0"
+                style="border-radius:12px; background:#fff; max-height:72vh;"></iframe>
+      </div>
+    </div>
+    <div class="modal-backdrop"></div>
+  </div>
+
+  <script src="burger.js"></script>
+  <script src="modal.js"></script>
+</body>
+</html>
