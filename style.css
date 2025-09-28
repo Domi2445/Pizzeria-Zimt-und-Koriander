@@ -214,7 +214,7 @@ body {
   transform: scale(1.03);
 }
 
-/* ---------- LINKS / LISTS / FOOTER ---------- */
+/* ---------- LINKS / LISTS ---------- */
 ul {
   padding-left: 1em;
 }
@@ -229,17 +229,49 @@ ul a:hover {
   color: #8e2a1f;
 }
 
+/* ---------- FOOTER mit Zahlungsmöglichkeiten ---------- */
 footer {
   background: #b8402d;
   color: #fff;
   text-align: center;
-  padding: 1.6em 0 1.1em 0;
+  padding: 1.6em 0 1.3em 0;
   margin-top: 3em;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   font-size: 1.06rem;
 }
-footer a {
+footer .footer-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+footer .footer-payments {
+  margin: 0.6em 0 0.8em;
+}
+footer .footer-payments span {
+  display: inline-block;
+  margin-right: 0.5em;
+  font-weight: 700;
+}
+footer .payment-list {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.45em;
+  list-style: none;
+  margin: 0.4em 0 0;
+  padding: 0;
+}
+footer .payment-list li {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #fff;
+  padding: 0.28em 0.6em;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  line-height: 1;
+  white-space: nowrap;
+}
+footer .footer-legal a {
   color: #fff;
   text-decoration: underline;
 }

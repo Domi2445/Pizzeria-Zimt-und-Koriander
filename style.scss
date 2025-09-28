@@ -213,7 +213,7 @@ body {
   }
 }
 
-/* ---------- LINKS / LISTS / FOOTER ---------- */
+/* ---------- LINKS / LISTS ---------- */
 ul {
   padding-left: 1em;
   li { margin-bottom: 0.7em; }
@@ -223,16 +223,53 @@ ul {
     &:hover { color: $main-dark; }
   }
 }
+
+/* ---------- FOOTER mit Zahlungsmöglichkeiten ---------- */
 footer {
   background: $main;
   color: #fff;
   text-align: center;
-  padding: 1.6em 0 1.1em 0;
+  padding: 1.6em 0 1.3em 0;
   margin-top: 3em;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
   font-size: 1.06rem;
-  a { color: #fff; text-decoration: underline; }
+
+  .footer-inner {
+    max-width: 1050px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+
+  .footer-payments {
+    margin: 0.6em 0 0.8em;
+    span {
+      display: inline-block;
+      margin-right: .5em;
+      font-weight: 700;
+    }
+  }
+
+  .payment-list {
+    display: inline-flex;
+    flex-wrap: wrap;
+    gap: .45em;
+    list-style: none;
+    margin: .4em 0 0;
+    padding: 0;
+    li {
+      background: rgba(255,255,255,0.16);
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #fff;
+      padding: .28em .6em;
+      border-radius: 999px;
+      font-size: .92rem;
+      line-height: 1;
+      white-space: nowrap;
+    }
+  }
+
+  .footer-legal a { color: #fff; text-decoration: underline; }
 }
 
 /* ---------- MODAL (GLORIAFOOD) ---------- */
