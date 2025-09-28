@@ -1,53 +1,113 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Impressum – Pizzeria Zimt & Koriander</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pizzeria Zimt & Koriander</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta name="description" content="Pizzeria Zimt & Koriander – Frisch. Regional. Unvergesslich. Jetzt online bestellen.">
 </head>
 <body>
-  <main class="section" style="max-width:900px;">
-    <h1>Impressum</h1>
-    <!-- Hinweis: Bitte alle Platzhalter (___) durch eure echten Daten ersetzen. Dies ist keine Rechtsberatung. -->
-    <p>Angaben gemäß § 5 TMG</p>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="nav-brand">Zimt & Koriander</div>
+      <div class="nav-toggle" id="burger" aria-label="Menü öffnen/schließen" aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </div>
+      <ul class="nav-menu" id="nav-menu" role="menu">
+        <li role="none"><a role="menuitem" href="#speisekarte">Speisekarte</a></li>
+        <li role="none"><a role="menuitem" href="#ueber-uns">Über uns</a></li>
+        <li role="none"><a role="menuitem" href="#highlights">Highlights</a></li>
+        <li role="none"><a role="menuitem" href="#galerie">Galerie</a></li>
+        <li role="none"><a role="menuitem" href="#kontakt">Kontakt</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>Frisch. Regional. Unvergesslich.</h1>
+      <p>Genieße authentische italienische Küche – mitten in deiner Stadt</p>
+      <a href="#" id="bestell-btn" class="cta-btn">Online bestellen</a>
+    </div>
+  </header>
 
-    <p>
-      Pizzeria Zimt &amp; Koriander<br>
-      Inhaber/in: ___<br>
-      Straße &amp; Hausnummer: ___<br>
-      PLZ &amp; Ort: ___<br>
-      Land: Deutschland
-    </p>
+  <main>
+    <section id="speisekarte" class="section">
+      <h2>Unsere Speisekarte</h2>
+      <div class="widget-hinweis">
+        <p>Hier kannst du direkt online bestellen oder unsere Speisekarte einsehen.</p>
+        <button id="bestell-btn-2" class="cta-btn small">Jetzt online bestellen</button>
+      </div>
+    </section>
 
-    <p>
-      Kontakt:<br>
-      Telefon: <a href="tel:093349799490">09334 9799490</a><br>
-      E-Mail: <a href="mailto:info@pizzeriazimtundkoriander.de">info@pizzeriazimtundkoriander.de</a>
-    </p>
+    <section id="ueber-uns" class="section about">
+      <div class="about-img">
+        <img src="https://images.unsplash.com/photo-1572442388796-11668a67e53d?q=80&w=1200&auto=format&fit=crop" alt="Holzofen mit frischer Pizza">
+      </div>
+      <div class="about-text">
+        <h2>Über uns</h2>
+        <p>Wir sind ein familiengeführtes Restaurant mit Leidenschaft für italienisches Essen und herzliche Gastfreundschaft. Qualität, regionale Zutaten und echte Handwerkskunst – dafür stehen wir.</p>
+      </div>
+    </section>
 
-    <h2>Umsatzsteuer-ID</h2>
-    <p>Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: ___</p>
+    <section id="highlights" class="section highlights">
+      <h2>Unsere Highlights</h2>
+      <div class="card-grid">
+        <article class="card h-card">
+          <img src="https://images.unsplash.com/photo-1542281286-9e0a16bb7366?q=80&w=600&auto=format&fit=crop" alt="Neapolitanische Pizza mit Basilikum">
+          <div>
+            <h3>Pizza Napoletana</h3>
+            <p>Dünner Boden, fluffiger Rand – im heißen Steinofen goldbraun gebacken.</p>
+          </div>
+        </article>
+        <article class="card h-card">
+          <img src="https://images.unsplash.com/photo-1473093295043-cdd812d0e601?q=80&w=600&auto=format&fit=crop" alt="Frische Pasta mit Tomatensauce">
+          <div>
+            <h3>Frische Pasta</h3>
+            <p>Hausgemacht und al dente – mit Saucen aus besten Zutaten.</p>
+          </div>
+        </article>
+        <article class="card h-card">
+          <img src="https://images.unsplash.com/photo-1551183053-bf91a1d81141?q=80&w=600&auto=format&fit=crop" alt="Frischer gemischter Salat">
+          <div>
+            <h3>Vitale Salate</h3>
+            <p>Knackig, bunt und mit hausgemachtem Dressing – perfekt als Beilage.</p>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
-    <p>___, Anschrift wie oben.</p>
+    <section id="galerie" class="section gallery">
+      <h2>Galerie</h2>
+      <div class="gallery-grid">
+        <figure><img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="Pizza aus dem Ofen"><figcaption>Aus dem Ofen</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd9?q=80&w=800&auto=format&fit=crop" alt="Zutaten – Tomaten und Basilikum"><figcaption>Frische Zutaten</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1544185310-0b3c701627d3?q=80&w=800&auto=format&fit=crop" alt="Pasta Teller"><figcaption>Pasta</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1543353071-10c8ba85a904?q=80&w=800&auto=format&fit=crop" alt="Tiramisù Dessert"><figcaption>Desserts</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1549880338-65ddcdfd017b?q=80&w=800&auto=format&fit=crop" alt="Restaurant Atmosphäre"><figcaption>Atmosphäre</figcaption></figure>
+        <figure><img src="https://images.unsplash.com/photo-1526318472351-c75fcf070305?q=80&w=800&auto=format&fit=crop" alt="Espresso"><figcaption>Espresso</figcaption></figure>
+      </div>
+    </section>
 
-    <h2>EU-Streitschlichtung</h2>
-    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener">https://ec.europa.eu/consumers/odr/</a>.</p>
-
-    <h2>Verbraucher­streit­beilegung/Universal­schlichtungs­stelle</h2>
-    <p>Wir sind nicht verpflichtet und nicht bereit, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
-
-    <h2>Haftung für Inhalte</h2>
-    <p>Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen...</p>
-
-    <h2>Haftung für Links</h2>
-    <p>Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben...</p>
-
-    <h2>Urheberrecht</h2>
-    <p>Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht...</p>
-
-    <p><a href="index.html">Zurück zur Startseite</a></p>
+    <section id="kontakt" class="section contact">
+      <h2>Kontakt & Öffnungszeiten</h2>
+      <div class="contact-grid">
+        <div>
+          <ul>
+            <li><strong>Adresse:</strong> Musterstraße 1, 12345 Musterstadt</li>
+            <li><strong>Telefon:</strong> <a href="tel:093349799490">09334 9799490</a></li>
+            <li><strong>WhatsApp:</strong> <a href="https://wa.me/49093349799490" target="_blank" rel="noopener">Jetzt schreiben</a></li>
+            <li><strong>E-Mail:</strong> <a href="mailto:info@pizzeriazimtundkoriander.de">info@pizzeriazimtundkoriander.de</a></li>
+          </ul>
+        </div>
+        <div>
+          <strong>Öffnungszeiten:</strong>
+          <ul>
+            <li>Montag – Samstag: 16:00 – 22:00 Uhr</li>
+            <li>Sonntag: 14:30 – 22:00 Uhr</li>
+          </ul>
+        </div>
+      </div>
+    </section>
   </main>
 
   <footer role="contentinfo" class="site-footer">
@@ -68,5 +128,25 @@
       <p class="footer-legal"><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutzerklärung</a></p>
     </div>
   </footer>
+
+  <!-- Bestell-Modal -->
+  <div id="bestell-modal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="bestell-modal-title">
+    <div class="modal-content">
+      <button class="modal-close" id="close-modal" title="Schließen" aria-label="Popup schließen">&times;</button>
+      <h2 id="bestell-modal-title">Online bestellen</h2>
+      <div class="gloriafood-widget">
+        <iframe src="https://www.foodbooking.com/api/fb/1d_mm_m"
+                width="100%"
+                height="700"
+                frameborder="0"
+                style="border-radius:12px; background:#fff; max-height:72vh;"
+                title="Online-Bestellung"></iframe>
+      </div>
+    </div>
+    <div class="modal-backdrop" aria-hidden="true"></div>
+  </div>
+
+  <script src="burger.js"></script>
+  <script src="modal.js"></script>
 </body>
 </html>
